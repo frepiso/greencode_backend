@@ -1,0 +1,29 @@
+{
+	"name": "@frepiso/logger",
+	"version": "0.0.0",
+	"private": true,
+	"_main": "./dist/index.js",
+	"_source": "./src/index.ts",
+	"_types": "./dist/index.d.ts",
+	"types": "src/index.ts",
+	"main": "src/index.ts",
+	"scripts": {
+		"build": "esbuild ./src/index.js --bundle --platform=node --outfile=dist/index.js",
+		"_build": "tsc",
+		"_dev": "tsc -w",
+		"lint": "eslint .",
+		"test": "jest --passWithNoTests -detectOpenHandles",
+		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+	},
+	"devDependencies": {
+		"@frepiso/config-eslint": "*",
+		"@frepiso/config-tsconfig": "*",
+		"@frepiso/config-jest": "*"
+	},
+	"files": [
+		"dist/**"
+	],
+	"jest": {
+		"preset": "@frepiso/config-jest/preset-node"
+	}
+}

@@ -1,0 +1,12 @@
+{
+	"name": "@frepiso/config-react",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+	},
+	"dependencies": {
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1"
+	}
+}

@@ -1,0 +1,1 @@
+# `@frepiso/config-jest`
