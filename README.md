@@ -40,15 +40,14 @@ yarn commit
 
 ## Workspaces structure
 
-```bash
+```scaffolding
 .
 └── <project-root>/
     ├── .github/workflows
-    ├── .husky/
     ├── .vscode/
     ├── apps/
-    |   ├── api-auth/**     # Node JS api
-    |   └── api-gateway/**  # Node JS api
+    │   ├── api-auth/**     # Node JS api
+    │   └── api-gateway/**  # Node JS api
     ├── docker/
     ├── docs/
     └── packages/
@@ -56,7 +55,7 @@ yarn commit
         │   ├── middlewares/
         │   ├── mocks/
         │   ├── properties/
-        |   ├── controllers/
+        │   ├── controllers/
         │   └── util/
         ├── config/
         │    ├── commits/   # commit config shared across the workspaces

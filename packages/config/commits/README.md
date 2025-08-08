@@ -41,3 +41,10 @@ yarn commit
 ```
 
 [More info](docs/CONTRIBUTE.md)
+
+## Release
+
+```bash
+# testing semantic release
+npx semantic-release --dry-run
+```
