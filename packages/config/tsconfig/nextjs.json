@@ -1,24 +1,26 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./base.json",
-  "display": "Next.js",
-  "exclude": ["node_modules"],
-  "include": ["src", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "display": "Next.js",  
   "compilerOptions": {
+    "plugins": [{ "name": "next" }],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
+    "forceConsistentCasingInFileNames": true,    
     "declaration": false,
     "declarationMap": false,
+    "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
-    "module": "esnext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve"
-  }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src", "next-env.d.ts"],
 }

@@ -1,13 +1,11 @@
 {
 	"extends": "./base.json",
-	"display": "Node.js",
-	"exclude": ["node_modules"],
-	"include": ["./**/*.ts"],
+	"display": "Node.js",	
 	"compilerOptions": {
 		"lib": ["es2021", "dom"],
 		"module": "CommonJS",
 		"outDir": "./dist",
 		"rootDir": "./src",
 		"resolveJsonModule": true
-	}
+	}	
 }

@@ -9,6 +9,7 @@
     "forceConsistentCasingInFileNames": true,
     "inlineSources": false,
     "isolatedModules": true,
+    "module": "es2015",
     "moduleResolution": "node",
     "noUnusedLocals": false,
     "noUnusedParameters": false,
@@ -16,5 +17,4 @@
     "skipLibCheck": true,
     "strict": true
   },
-  "exclude": ["node_modules", "**/*/dist", "**/*.test.ts", "**/*.spec.ts"]
 }

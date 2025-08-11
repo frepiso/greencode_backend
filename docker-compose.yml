@@ -1,0 +1,33 @@
+services:
+  api-gateway:
+    container_name: api-gateway
+    build:
+      context: .
+      dockerfile: ./apps/api-gateway/Dockerfile
+      args:
+        PORT: ${AUTH_PORT}
+    env_file:
+      - ./apps/api-gateway/.env
+    ports:
+      - ${AUTH_PORT}:${AUTH_PORT}
+    restart: always
+    networks:
+      - frepiso_network
+
+  api-auth:
+    container_name: api-auth
+    build:
+      context: .
+      dockerfile: ./apps/api-auth/Dockerfile
+      args:
+        PORT: ${GATEWAY_PORT}
+    env_file:
+      - ./apps/api-auth/.env
+    ports:
+      - ${GATEWAY_PORT}:${GATEWAY_PORT}
+    restart: always
+    networks:
+      - frepiso_network
+networks:
+  frepiso_network:
+    driver: bridge
