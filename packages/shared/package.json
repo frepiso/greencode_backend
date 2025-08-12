@@ -7,8 +7,8 @@
 	"scripts": {
 		"build": "tsc && tsc-alias",
 		"lint": "TIMING=1 eslint .",
-		"test": "jest --passWithNoTests -detectOpenHandles",
-		"test-coverage": "jest --passWithNoTests -detectOpenHandles --coverage --coverageReporters=lcov && tools-testcoverage",
+		"test": "jest --passWithNoTests --detectOpenHandles",
+		"test-coverage": "jest --passWithNoTests --detectOpenHandles --coverage --coverageReporters=lcov && tools-testcoverage",
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf coverage"
 	},
 	"devDependencies": {
@@ -21,6 +21,7 @@
 		"dist/**"
 	],
 	"jest": {
-		"preset": "@frepiso/config-jest/preset-node"
+		"preset": "@frepiso/config-jest/preset-packages",
+		"displayName": "frepiso-shared"
 	}
 }

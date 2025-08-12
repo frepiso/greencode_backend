@@ -1,15 +1,23 @@
 import { escapeStringRegexp, isEven, isOdd, toBool } from '../src/';
 
 describe('escapeStringRegexp', () => {
+	test('main', () => {
+		expect(escapeStringRegexp('\\ ^ $ * + ? . ( ) | { } [ ]')).toBe(
+			'\\\\ \\^ \\$ \\* \\+ \\? \\. \\( \\) \\| \\{ \\} \\[ \\]',
+		);
+	});
+	test('escapes `-` in a way compatible with PCRE', () => {
+		expect(escapeStringRegexp('foo - bar')).toBe('foo \\x2d bar');
+	});
 	test('it returns string to bool', () => {
 		expect(escapeStringRegexp('/path/to/resource.html?search=query')).toBe(
-			'/path/to/resource.html?search=query',
+			'/path/to/resource\\.html\\?search=query',
 		);
 	});
 });
 
 describe('toBool', () => {
-	test('it returns boll string to bool', () => {
+	test('it returns bool string to bool', () => {
 		expect(toBool('true')).toBe(true);
 		expect(toBool('True')).toBe(true);
 		expect(toBool('TRUE')).toBe(true);

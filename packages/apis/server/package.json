@@ -7,7 +7,8 @@
 	"scripts": {
 		"build": "tsc && tsc-alias",
 		"lint": "TIMING=1 eslint .",
-		"test": "jest --passWithNoTests -detectOpenHandles",
+		"test": "jest --passWithNoTests --detectOpenHandles",
+		"test-coverage": "jest --passWithNoTests --detectOpenHandles --coverage --coverageReporters=lcov && tools-testcoverage",
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf coverage"
 	},
 	"dependencies": {
@@ -23,6 +24,7 @@
 		"@frepiso/config-jest": "*",
 		"@frepiso/config-supertest": "*",
 		"@frepiso/config-typescript": "*",
+		"@frepiso/tools-testcoverage": "*",
 		"@types/body-parser": "^1.19.6",
 		"@types/cors": "^2.8.19",
 		"@types/morgan": "^1.9.10",
@@ -34,6 +36,7 @@
 		"dist/**"
 	],
 	"jest": {
-		"preset": "@frepiso/config-jest/preset-node"
+		"preset": "@frepiso/config-jest/preset-packages",
+		"displayName": "apis-server"
 	}
 }

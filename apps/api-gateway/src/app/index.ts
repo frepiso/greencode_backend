@@ -4,8 +4,8 @@ import { log } from '@frepiso/tools-logger';
 const app: IApp = ApiServer.getInstance();
 
 export const onListen = (app: IApp): void => {
-	const name = app.get('apiName');
-	log(`api ${name} running on ${app.get('port')}`);
+	log(`Listening ${app.get('apiName')} at port ${app.get('port')}`);
+	log(`Environment: ${app.get('environment')}`);
 };
 
 export default app;

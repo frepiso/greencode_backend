@@ -7,7 +7,8 @@
 	"scripts": {
 		"build": "tsc && tsc-alias",
 		"dev": "ts-node-dev --respawn src/index.ts",
-		"test": "jest --passWithNoTests -detectOpenHandles",
+		"test": "jest --passWithNoTests --detectOpenHandles",
+		"test-coverage": "jest --passWithNoTests --detectOpenHandles --coverage --coverageReporters=lcov && tools-testcoverage",
 		"lint": "TIMING=1 eslint .",
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf coverage"
 	},
@@ -25,5 +26,9 @@
 		"@types/node": "^24.2.0",
 		"ts-node-dev": "^2.0.0",
 		"typescript": "^5.9.2"
+	},
+	"jest": {
+		"preset": "@frepiso/config-jest/preset-apps",
+		"displayName": "api-auth"
 	}
 }

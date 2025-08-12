@@ -8,9 +8,11 @@
   "devDependencies": {
     "@jest/globals": "^30.0.5",
     "@types/jest": "^30.0.0",
-    "jest": "^30.0.5"
+    "jest": "^30.0.5",
+    "ts-jest": "^29.4.1"
   },
   "files": [
-    "preset-node/jest-preset.js"
+    "preset-apps/jest-preset.js",
+    "preset-packages/jest-preset.js"
   ]
 }
