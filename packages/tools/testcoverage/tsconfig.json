@@ -1,0 +1,9 @@
+{
+	"extends": "@frepiso/config-typescript/tsconfig/node.json",
+	"compilerOptions": {
+		"outDir": "./dist",
+		"rootDir": "./src"
+	},
+	"include": ["./**/*.ts"],
+	"exclude": ["node_modules", "dist", "__test__"]
+}
