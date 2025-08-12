@@ -1,11 +1,15 @@
 {
+	"$schema": "https://json.schemastore.org/tsconfig",
 	"extends": "./base.json",
-	"display": "Node.js",	
+  	"display": "Node",
 	"compilerOptions": {
-		"lib": ["es2021", "dom"],
+		"lib": ["ES2015", "DOM"],
+    	"target": "ES6",
 		"module": "CommonJS",
-		"outDir": "./dist",
-		"rootDir": "./src",
-		"resolveJsonModule": true
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"declaration": true,
+		"declarationMap": true,
+    	"types": ["jest", "node"]
 	}	
 }

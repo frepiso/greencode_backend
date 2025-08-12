@@ -5,11 +5,11 @@ services:
       context: .
       dockerfile: ./apps/api-gateway/Dockerfile
       args:
-        PORT: ${AUTH_PORT}
+        PORT: ${GATEWAY_PORT}
     env_file:
       - ./apps/api-gateway/.env
     ports:
-      - ${AUTH_PORT}:${AUTH_PORT}
+      - ${GATEWAY_PORT}:${GATEWAY_PORT}
     restart: always
     networks:
       - frepiso_network
@@ -20,11 +20,11 @@ services:
       context: .
       dockerfile: ./apps/api-auth/Dockerfile
       args:
-        PORT: ${GATEWAY_PORT}
+        PORT: ${AUTH_PORT}
     env_file:
       - ./apps/api-auth/.env
     ports:
-      - ${GATEWAY_PORT}:${GATEWAY_PORT}
+      - ${AUTH_PORT}:${AUTH_PORT}
     restart: always
     networks:
       - frepiso_network

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "./base.json",
-  "display": "Next.js",  
+  "display": "Next", 
   "compilerOptions": {
     "plugins": [{ "name": "next" }],
     "target": "es5",
@@ -9,9 +9,7 @@
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,    
-    "declaration": false,
-    "declarationMap": false,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "incremental": true,
     "esModuleInterop": true,
@@ -21,6 +19,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "exclude": ["node_modules"],
   "include": ["src", "next-env.d.ts"],
+  "exclude": ["node_modules"]
 }

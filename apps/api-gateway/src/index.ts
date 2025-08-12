@@ -1,13 +1,9 @@
-import { log } from '@frepiso/logger';
-import dotenv from 'dotenv';
-import { createServer } from './app/server';
+import * as http from 'http';
+import app, { onListen } from './app';
 
-dotenv.config();
-
-const port = process.env.PORT || 4200;
-const server = createServer();
-
-server.listen(port, () => {
-	log(`api running on ${port}`);
+const server: http.Server = http.createServer(app);
+server.listen(app.get('port'), () => {
+	onListen(app);
 });
 server.on('error', console.error);
+export default server;

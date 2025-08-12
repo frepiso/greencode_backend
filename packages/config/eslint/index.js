@@ -1,21 +1,3 @@
-// module.exports = {
-//   root: true,
-//   parser: '@typescript-eslint/parser',
-//   parserOptions: {
-//     project: ['./tsconfig.base.json'],
-//   },
-//   plugins: ['@typescript-eslint'],
-//   extends: [
-//     'eslint:recommended',
-//     'plugin:@typescript-eslint/recommended',
-//     'prettier', // asegúrate de que Prettier no cause conflictos
-//   ],
-//   rules: {
-//     // reglas personalizadas opcionales
-//   },
-//   ignorePatterns: ['dist', 'node_modules'],
-// };
-
 module.exports = {
 	extends: ['next', 'turbo', 'prettier'],
 	ignorePatterns: ['**/dist/**', '**/temp/**'],

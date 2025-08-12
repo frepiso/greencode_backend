@@ -1,26 +1,28 @@
 {
 	"name": "api-auth",
 	"version": "1.0.0",
-	"main": "src/index.ts",
 	"private": true,
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"scripts": {
-		"build": "tsc",
+		"build": "tsc && tsc-alias",
 		"dev": "ts-node-dev --respawn src/index.ts",
 		"test": "jest --passWithNoTests -detectOpenHandles",
 		"lint": "TIMING=1 eslint .",
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf coverage"
 	},
 	"dependencies": {
+		"@frepiso/apis-server": "*",
+		"@frepiso/logger": "*",
 		"bcrypt": "^6.0.0",
-		"express": "^5.1.0",
 		"jsonwebtoken": "^9.0.2",
 		"mongoose": "^8.17.1"
 	},
 	"devDependencies": {
-		"@frepiso/config-eslint": "*",
-		"@frepiso/config-tsconfig": "*",
-		"@frepiso/config-jest": "*",
 		"@frepiso/config-esbuild": "*",
+		"@frepiso/config-eslint": "*",
+		"@frepiso/config-jest": "*",
+		"@frepiso/config-tsconfig": "*",
 		"@frepiso/logger": "*",
 		"@types/bcrypt": "^6.0.0",
 		"@types/express": "^5.0.3",
@@ -28,11 +30,5 @@
 		"@types/node": "^24.2.0",
 		"ts-node-dev": "^2.0.0",
 		"typescript": "^5.9.2"
-	},
-	"files": [
-		"dist/**"
-	],
-	"jest": {
-		"preset": "@frepiso/config-jest/preset-node"
 	}
 }
