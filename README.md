@@ -46,27 +46,28 @@ yarn commit
     ├── .github/workflows
     ├── .vscode/
     ├── apps/
-    │   ├── api-auth/**     # Node JS api
-    │   └── api-gateway/**  # Node JS api
-    ├── docker/
+    │   ├── api-auth/**       # Node JS api
+    │   └── api-gateway/**    # Node JS api
     ├── docs/
     └── packages/
         ├── apis/
+        │   ├── controllers/
         │   ├── middlewares/
         │   ├── mocks/
-        │   ├── properties/
-        │   ├── controllers/
-        │   └── util/
+        │   ├── server/
+        │   └── services/
+        ├── apps/
         ├── config/
-        │    ├── commits/   # commit config shared across the workspaces
-        │    ├── esbuild/   # esbuild-config shared across the workspaces
-        │    ├── eslint/    # eslint-config shared across the workspaces
-        │    ├── express/   # express config shared across the workspaces
-        │    ├── jest/      # jest config shared across the workspaces
-        │    ├── next/      # next config shared across the workspaces
-        │    ├── react/     # react config shared across the workspaces
-        │    ├── tsconfig/  # tsconfig shared across the workspaces
-        │    └── vite/      # vite shared across the workspaces
-        └── logger/ # isomorphic logger (a small wrapper around console.log)
+        │    ├── commits/       # commit dependencies and config shared across the workspaces
+        │    ├── esbuild/       # esbuild dependencies and config shared across the workspaces
+        │    ├── eslint/        # eslint dependencies and config shared across the workspaces
+        │    ├── express/       # express dependencies and config shared across the workspaces
+        │    ├── jest/          # jest dependencies and config shared across the workspaces
+        │    ├── react/         # react dependencies and config shared across the workspaces
+        │    └── typescript/    # typescript dependencies and config shared across the workspaces
+        ├── shared/             # shared enums, types, properties and entities
+        └── tools/
+              ├── logger/       # isomorphic logger (a small wrapper around console.log)
+              └── testcoverage  # test coverage tool
 
 ```
