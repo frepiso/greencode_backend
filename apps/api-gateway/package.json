@@ -13,9 +13,6 @@
 	},
 	"dependencies": {
 		"@frepiso/apis-server": "*",
-		"@frepiso/logger": "*"
-	},
-	"devDependencies": {
-		"@frepiso/config-esbuild": "*"
+		"@frepiso/tools-logger": "*"
 	}
 }

@@ -1,0 +1,24 @@
+{
+	"name": "@frepiso/config-typescript",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+	},
+	"devDependencies": {
+		"@babel/core": "^7.28.0",
+		"tsc": "^2.0.4",
+		"tsc-alias": "^1.8.16",
+		"typescript": "^5.9.2"
+	},
+	"files": [
+		"tsconfig/base.json",
+		"tsconfig/nextjs.json",
+		"tsconfig/node.json",
+		"tsconfig/react-library.json",
+		"tsconfig/vite.json"
+	],
+	"publishConfig": {
+		"access": "public"
+	}
+}

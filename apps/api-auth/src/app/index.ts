@@ -1,5 +1,5 @@
 import { ApiServer, IApp } from '@frepiso/apis-server';
-import { log } from '@frepiso/logger';
+import { log } from '@frepiso/tools-logger';
 
 const app: IApp = ApiServer.getInstance();
 

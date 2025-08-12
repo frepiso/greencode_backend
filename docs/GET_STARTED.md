@@ -24,7 +24,7 @@ yarn dev        # run dev task
 ## How to install a package in a workspace
 
 ```bash
-# Example: yarn workspace @greenice/config-next add next-transpile-modules
+# Example: yarn workspace @frepiso/config-next add next-transpile-modules
 yarn workspace <workspace> add <package>
 ```
 

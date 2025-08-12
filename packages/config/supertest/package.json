@@ -1,0 +1,12 @@
+{
+	"name": "@frepiso/config-supertest",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist"
+	},
+	"devDependencies": {
+		"@types/supertest": "^6.0.3",
+		"supertest": "^7.1.4"
+	}
+}
