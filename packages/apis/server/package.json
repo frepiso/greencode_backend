@@ -11,31 +11,24 @@
 		"clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist && rm -rf coverage"
 	},
 	"dependencies": {
-		"@frepiso/logger": "*",
+		"@frepiso/tools-logger": "*",
+		"@frepiso/shared": "*",
 		"body-parser": "^2.2.0",
 		"cors": "^2.8.5",
-		"express": "^5.1.0",
-		"express-session": "^1.18.2",
 		"morgan": "^1.10.1"
 	},
 	"devDependencies": {
-		"@frepiso/config-esbuild": "*",
 		"@frepiso/config-eslint": "*",
+		"@frepiso/config-express": "*",
 		"@frepiso/config-jest": "*",
-		"@frepiso/config-tsconfig": "*",
-		"@jest/globals": "^30.0.5",
+		"@frepiso/config-supertest": "*",
+		"@frepiso/config-typescript": "*",
 		"@types/body-parser": "^1.19.6",
 		"@types/cors": "^2.8.19",
-		"@types/express": "^5.0.3",
-		"@types/express-session": "^1.18.2",
 		"@types/morgan": "^1.9.10",
 		"@types/node": "^24.2.1",
-		"@types/supertest": "^6.0.3",
 		"nodemon": "^3.1.10",
-		"supertest": "^7.1.4",
-		"ts-node-dev": "^2.0.0",
-		"tsc-alias": "^1.8.16",
-		"typescript": "^5.9.2"
+		"ts-node-dev": "^2.0.0"
 	},
 	"files": [
 		"dist/**"

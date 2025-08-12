@@ -1,6 +1,5 @@
+import { IEnvConfig, ILogLevelKey } from '@frepiso/shared';
 import dotenv from 'dotenv';
-import { IEnvConfig } from '../types/envconfig.types';
-import { ILogLevelKey } from '../types/logs.types';
 
 export class EnvConfig {
 	private static instance: EnvConfig;
