@@ -5,9 +5,31 @@ on:
     branches:
       - main
 
+env:
+  RELEASE_COMMIT_PATTERN: "^chore\\(release\\)"
+
 jobs:
+  check-commit:
+    name: Check commit message
+    runs-on: ubuntu-latest
+    outputs:
+      should_release: ${{ steps.check.outputs.should_release }}
+    steps:
+      - name: Check if commit matches release pattern
+        id: check
+        run: |
+          if [[ "${GITHUB_EVENT_HEAD_COMMIT_MESSAGE}" =~ ${RELEASE_COMMIT_PATTERN} ]]; then
+            echo "should_release=true" >> $GITHUB_OUTPUT
+          else
+            echo "should_release=false" >> $GITHUB_OUTPUT
+          fi
+        env:
+          GITHUB_EVENT_HEAD_COMMIT_MESSAGE: ${{ github.event.head_commit.message }}
+
   release:
     name: Semantic Release
+    needs: check-commit
+    if: needs.check-commit.outputs.should_release == 'true'
     runs-on: ubuntu-latest
 
     steps:
@@ -28,3 +50,12 @@ jobs:
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  no-release:
+    name: Skip release
+    needs: check-commit
+    if: needs.check-commit.outputs.should_release == 'false'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skipping release
+        run: echo "No release triggered — commit does not match '${RELEASE_COMMIT_PATTERN}'"
